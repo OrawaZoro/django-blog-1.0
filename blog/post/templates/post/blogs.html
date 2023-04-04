@@ -1,0 +1,23 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<section class="container" id="blog">
+  <h1>Explore My world of words: My complete blog archive</h1>
+  <div id="blog-list">
+    {% for blog in blogs%}
+    <article>
+      <a href="{% url 'app_post:post' blog.id%}">
+        <div class="blog-img">
+          <img src="{{blog.post_thumbnail.url}}" alt="" />
+        </div>
+        <div class="blog-body">
+          <h1 id="article-heading">{{blog.post_title}}</h1>
+          <p>{{blog.post_para|truncatechars:150}}</p>
+          <div class="post-date">
+            <span>{{blog.post_created.date}}</span>
+          </div>
+        </div>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

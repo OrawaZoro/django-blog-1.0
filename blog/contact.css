@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle, rgb(27, 39, 53), rgb(9, 10, 15)) 0% 0% /
+    cover repeat;
+}
+
+#contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+}
+#contact-text {
+  width: 95%;
+  max-width: 940px;
+  /* margin: 0 auto; */
+  padding: 3rem;
+  text-align: center;
+}
+
+#contact-text h1 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 70px;
+  margin-bottom: 30px;
+  color: #03ff92;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+#contact-text h1::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #f8674d;
+  animation: flow-line 2s ease forwards;
+}
+
+#contact-text p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18.5px;
+  line-height: 1.7;
+  color: #b8b7b7;
+  text-align: left;
+}
+
+#contact-text span a {
+  text-transform: uppercase;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+#contact-text span a:hover {
+  border-bottom: 3px dashed #03f79a;
+}
+@keyframes flow-line {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

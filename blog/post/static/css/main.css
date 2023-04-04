@@ -1,0 +1,414 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
+/* Basic resets */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Custom Variables */
+
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --primary-font: "Source Sans Pro", sans-serif;
+}
+
+/* Main styles start */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  padding: 20px 40px;
+  background: radial-gradient(circle, rgb(27, 39, 53), rgb(9, 10, 15)) 0% 0% /
+    cover repeat;
+  background-color: #000;
+}
+
+/* Header styles start */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo a {
+  font-size: 70px;
+  color: #ff6347;
+}
+
+nav ul li {
+  display: inline-block;
+  font-size: 22px;
+  padding: 0 20px;
+}
+
+nav a,
+#hamburger-icon > p,
+#crossbar-icon {
+  font-family: "Source Sans Pro", sans-serif;
+  color: var(--secondary-color);
+}
+
+#hamburger-icon,
+#crossbar-icon {
+  display: none;
+}
+
+/* Header styles end */
+
+/* Hero Section styles start */
+
+.container {
+  width: 85%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+#hero {
+  display: flex;
+  column-gap: 50px;
+  font-family: var(--primary-font);
+  margin-top: 40px;
+}
+
+#hero-img {
+  flex: 0 1 45%;
+}
+
+#hero-text {
+  flex: 0 1 55%;
+  margin-top: 30px;
+}
+
+#hero-text p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--secondary-color);
+}
+
+#hero-text p span {
+  color: #ff6347;
+}
+
+#cta-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #ff7f50;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+#cta-btn:hover {
+  background-color: #ff6347;
+}
+/* Hero Section styles end */
+
+/* Blog Section styles start */
+
+#blog {
+  margin-top: 70px;
+  font-family: var(--primary-font);
+}
+
+.sidebar {
+  font-family: var(--primary-font);
+}
+
+.container > h1 {
+  margin: 0 0 2rem;
+  text-transform: uppercase;
+  font-size: clamp(1rem, 1rem + 3vw, 3rem);
+  text-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+#blog-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 15px;
+  row-gap: 30px;
+}
+
+article {
+  flex: 1 1 calc(33.333% - 15px);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #fff;
+}
+
+article h1 {
+  font-size: 1.6rem;
+  color: #111;
+  text-shadow: none;
+  margin: 0 0 1.5rem;
+}
+
+.blog-img {
+  height: 250px;
+}
+
+.blog-body {
+  padding: 1.5rem;
+}
+
+.blog-body p {
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+.post-date span {
+  display: inline-block;
+  padding: 5px;
+  font-size: 15px;
+  color: #515151;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+/* Blog Section styles end */
+
+/* Post Section starts here */
+
+#post-container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 70px auto 0;
+}
+
+.post-content > h1 {
+  font-family: var(--primary-font);
+  font-size: 3rem;
+  color: #ff6347;
+  text-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.post {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-content {
+  flex: 0 1 calc(65% - 20px);
+}
+
+.sidebar {
+  flex: 0 1 calc(35% - 20px);
+}
+
+.sidebar article {
+  margin-bottom: 40px;
+}
+
+.post-body {
+  padding: 40px;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.post-para {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 20px;
+}
+
+.post-img {
+  margin: 20px 0;
+}
+/* Post Section ends here */
+
+@media only screen and (max-width: 1200px) {
+  #hero {
+    column-gap: 35px;
+  }
+
+  #blog-list {
+    max-width: 960px;
+    flex-wrap: wrap;
+  }
+
+  article {
+    flex: 0 1 calc(50% - 10px);
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .sidebar {
+    display: none;
+  }
+
+  .post-content {
+    flex: 1;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  header {
+    justify-content: flex-end;
+    margin: 0;
+  }
+
+  nav {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100vh;
+    background-color: #ff7f50;
+    transition: left 0.8s;
+  }
+
+  #hamburger-icon,
+  #crossbar-icon {
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  #crossbar-icon {
+    font-size: 45px;
+  }
+
+  ul {
+    padding-top: 90px;
+    margin-top: 60px;
+  }
+
+  nav ul li {
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    padding: 20px 40px;
+  }
+
+  nav ul li:hover {
+    background-color: #ff6347;
+  }
+  nav ul li a {
+    font-size: 30px;
+  }
+
+  #hero {
+    flex-direction: column;
+    align-items: center;
+    word-spacing: 2.3px;
+  }
+
+  #hero-img {
+    flex: 0 1 50%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #blog-list {
+    max-width: 720px;
+    flex-direction: column;
+  }
+
+  .blog-img {
+    height: 150px;
+  }
+
+  .post-content > h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container {
+    width: 100%;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  #hamburger-icon,
+  #crossbar-icon {
+    top: 25px;
+    left: 25px;
+  }
+
+  #hero-text p {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  #post-container {
+    width: 100%;
+  }
+  .post-body {
+    padding: 15px;
+  }
+
+  .post-content > h1 {
+    font-size: 2rem;
+  }
+
+  .post-body p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .post-content > h1 {
+    font-size: 1.8rem;
+  }
+
+  .post-body p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}

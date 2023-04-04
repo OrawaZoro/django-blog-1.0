@@ -1,0 +1,23 @@
+{%load static %}
+
+<header>
+  <div id="logo">
+    <a href="{% url 'app_post:home' %}"><i class="fa-solid fa-m"></i></a>
+  </div>
+  <div id="hamburger-icon" onclick="openMenuBar()">
+    <p href="#"><i class="fa-solid fa-bars"></i></p>
+  </div>
+  <nav id="navbar">
+    <ul>
+      <p href="#" onclick="closeMenuBar()" id="crossbar-icon">X</p>
+      <li><a href="{% url 'app_post:home' %}">Home</a></li>
+      <li><a href="{% url 'app_post:blogs' %}">Articles</a></li>
+      <li><a href="{% url 'app_post:contact' %}">Contact</a></li>
+      <li>
+        <a href="mailto:orewazorodha@gmail.com"
+          ><i class="fa-regular fa-envelope"></i
+        ></a>
+      </li>
+    </ul>
+  </nav>
+</header>

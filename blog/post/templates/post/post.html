@@ -1,0 +1,30 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<section id="post-container">
+  <div class="post">
+    <div class="post-content">
+      <h1>{{selected_post.post_title}}</h1>
+      <div class="post-body">
+        <p class="post-para">{{selected_post.body|safe}}</p>
+      </div>
+    </div>
+    <div class="sidebar">
+      {% for post in posts%}
+      <article>
+        <a href="{% url 'app_post:post' post.id %}">
+          <div class="blog-img">
+            <img src="{{post.post_thumbnail.url}}" alt="" />
+          </div>
+          <div class="blog-body">
+            <h1 id="article-heading">{{post.post_title}}</h1>
+            <p>{{post.post_para|truncatechars:150}}</p>
+            <div class="post-date">
+              <span>{{post.post_created.date}}</span>
+            </div>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock content %}

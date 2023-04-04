@@ -1,0 +1,39 @@
+{% extends 'main.html' %} {%load static %} {%block content %}
+<section id="hero" class="container">
+  <div id="hero-img">
+    <img src="{% static 'media/author.png' %}" alt="" />
+  </div>
+  <div id="hero-text">
+    <p>
+      I'm Mani, a passionate <span>Full Stack developer</span> with experience
+      in front-end and back-end development. Proficient in languages such as
+      HTML, CSS, JavaScript, Python and Django, I have the skills necessary to
+      create stunning websites and web applications. My attention to detail,
+      creativity, and dedication ensure that each project I work on is a
+      success. Let's work together to bring your ideas to life!
+    </p>
+    <a href="{% url 'app_post:contact' %}" id="cta-btn">Get in Touch</a>
+  </div>
+</section>
+<section class="container" id="blog">
+  <h1>New Releases</h1>
+  <div id="blog-list">
+    {% for post in posts%}
+    <article>
+      <a href="{% url 'app_post:post' post.id%}">
+        <div class="blog-img">
+          <img src="{{post.post_thumbnail.url}}" alt="" />
+        </div>
+        <div class="blog-body">
+          <h1 id="article-heading">{{post.post_title}}</h1>
+          <p>{{post.post_para|truncatechars:150}}</p>
+          <div class="post-date">
+            <span>{{post.post_created.date}}</span>
+          </div>
+        </div>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
